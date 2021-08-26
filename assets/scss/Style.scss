@@ -1,0 +1,341 @@
+// IN THE NAME OF GOD
+// login task sharif ie  - Amirmahdi kaheh
+//  =============
+// VARIABLES & MIXIN
+$color_primary:#21C7B1;
+$color_white: #fff;
+// SETTIGNS
+@font-face {
+    font-family: mainFont;
+    src: url(assets/IRANSansFaNum.ttf);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+@mixin centered {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+body {
+    font-family: mainFont;
+    background-color: $color_primary;
+    overflow: hidden;
+}
+
+// BG ATTACH styling
+.bgAttach1 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 40%;
+    pointer-events: none;
+}
+
+.bgAttach2 {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 40%;
+    pointer-events: none;
+}
+
+// LOGIN CONTAINER styling
+.loginContainer,
+.registerContainer {
+    width: 100%;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+    @include centered();
+    transition: all 1s ease-in-out;
+    opacity: 1;
+    .login,
+    .register {
+        width: 1000px;
+        background-color: $color_white;
+        border-radius: 25px;
+        display: flex;
+        justify-content: space-between;
+        .right {
+            width: 50%;
+            @include centered();
+            align-items: flex-start;
+            .container {
+                width: 70%;
+                margin: 2rem 0;
+                direction: rtl;
+                display: flex;
+                flex-direction: column;
+                p:first-child {
+                    font-weight: 900;
+                    margin-bottom: 1.5rem;
+                    color: #333;
+                    font-size: 18px;
+                    opacity: .7;
+                    span {
+                        color: $color_primary;
+                        font-size: 35px;
+                    }
+                }
+                .loginForm {
+                    .errorBox {
+                        margin-bottom: 2rem;
+                        visibility: hidden;
+                        font-size: 12px;
+                        color: #8b0000;
+                        margin-top: .2rem;
+                        transition: all .30s ease-in-out;
+                    }
+                    .input_container {
+                        margin: 0rem 0;
+                        position: relative;
+                        width: 100%;
+                    }
+                    .input_password_container {
+                        display: flex;
+                        justify-content: space-between;
+                        width: 100%;
+                        & .input_container {
+                            width: 45%;
+                        }
+                    }
+                    .current_input {
+                        padding: 0.5rem 0;
+                        text-align: right;
+                        width: 100%;
+                        border: none;
+                        border-bottom: 1.5px solid #d3d3d3;
+                        outline: none;
+                    }
+                    .current_input:focus~.input_label,
+                    .current_input:valid~.input_label {
+                        bottom: 39px;
+                        right: 0;
+                        opacity: 1;
+                        font-size: 11px;
+                    }
+                    .current_input:focus~.input_label i,
+                    .current_input:valid~.input_label i {
+                        font-size: 11px;
+                    }
+                    .current_input:focus~.input_label ::before,
+                    .current_input:valid~.input_label ::before {
+                        display: none;
+                        opacity: 0;
+                        content: '';
+                    }
+                    .current_input:focus~.input_line,
+                    .current_input:valid~.input_line {
+                        -webkit-transform: scaleX(1);
+                        transform: scaleX(1);
+                    }
+                    .input_label {
+                        position: absolute;
+                        bottom: 13px;
+                        right: 10px;
+                        color: grey;
+                        font-size: 13px;
+                        opacity: 0.8;
+                        pointer-events: none;
+                        -webkit-transition: all 0.3s ease;
+                        transition: all 0.3s ease;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        & i {
+                            margin-left: .5rem;
+                            font-size: 14px;
+                            transition: all .30s ease;
+                        }
+                    }
+                    .input_password_shower {
+                        position: absolute;
+                        bottom: -17px;
+                        opacity: 0;
+                        visibility: hidden;
+                        cursor: pointer;
+                        left: 10px;
+                        color: grey;
+                        font-size: 17px;
+                        transition: all .30s cubic-bezier(1, 0, 0, 1);
+                        transition: all .30s ease;
+                        &:hover {
+                            color: #333;
+                        }
+                    }
+                    .input_line {
+                        position: absolute;
+                        bottom: 0;
+                        left: 0;
+                        width: 100%;
+                        height: 2.5px;
+                        background-color: #333;
+                        -webkit-transform: scaleX(0);
+                        transform: scaleX(0);
+                        -webkit-transition: all 0.5s ease;
+                        transition: all 0.5s ease;
+                    }
+                    .formSubmit {
+                        width: 100%;
+                        padding: .7rem 0;
+                        border-radius: 10px;
+                        background-color: $color_primary;
+                        border: none;
+                        cursor: pointer;
+                        color: $color_white;
+                    }
+                }
+                .separatorSection {
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                    margin: 1rem 0;
+                    margin-top: 2.5rem;
+                    div {
+                        width: 100%;
+                        height: 2px;
+                        background-color: #D6EAE7;
+                        opacity: .7;
+                    }
+                    span {
+                        margin: 0 1rem;
+                        opacity: .6;
+                    }
+                }
+                .loginOtherWays {
+                    display: flex;
+                    align-items: center;
+                    margin-bottom: 1rem;
+                    justify-content: space-between;
+                    .loginOtherWaysTitle {
+                        font-size: 14px;
+                        margin-bottom: 0;
+                    }
+                    section {
+                        i {
+                            font-size: 35px;
+                            color: #000;
+                            opacity: .7;
+                            border-radius: 50px;
+                            margin-right: 1rem;
+                            cursor: pointer;
+                            transition: all .30s ease-in-out;
+                            &:hover {
+                                opacity: 1;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        .left {
+            width: 50%;
+            background-color: #D6EAE7;
+            @include centered();
+            flex-direction: column;
+            border-radius: 25px 0 0 25px;
+            padding: 2rem 0;
+            img {
+                width: 80%;
+            }
+            p {
+                margin-top: 2rem;
+                opacity: .7;
+            }
+            label {
+                font-size: 23px;
+                margin: .5rem 0;
+                font-weight: 700;
+                cursor: pointer;
+                color: $color_primary;
+            }
+        }
+    }
+}
+
+#registerContainer {
+    top: -100%;
+    opacity: 0;
+}
+
+label {
+    color: #21C7B1;
+}
+
+.signupMobile {
+    opacity: .7;
+    display: none;
+}
+
+// validate check box for change auth layout 
+#checkBox:checked~#loginContainer {
+    top: -100%;
+    opacity: 0;
+}
+
+#checkBox:checked~#registerContainer {
+    top: 0%;
+    opacity: 1;
+}
+
+#checkBox:checked~.bgAttach1 {
+    animation: bgAttach1 1s ease-in-out;
+}
+
+#checkBox:checked~.bgAttach2 {
+    animation: bgAttach2 1s ease-in-out;
+}
+
+// ANIMATIONS 
+@keyframes bgAttach1 {
+    0% {
+        top: 0%;
+        left: 0;
+    }
+    50% {
+        top: -10%;
+        left: -10%;
+    }
+    100% {
+        top: 0%;
+        left: 0;
+    }
+}
+
+@keyframes bgAttach2 {
+    0% {
+        bottom: 0%;
+        right: 0;
+    }
+    50% {
+        bottom: -10%;
+        right: -10%;
+    }
+    100% {
+        bottom: 0%;
+        right: 0;
+    }
+}
+
+// RESPONSIVE
+@media only screen and (max-width:600px) {
+    .login,
+    .register {
+        .right {
+            width: 100% !important;
+            .signupMobile {
+                display: flex;
+            }
+        }
+        .left {
+            width: 0 !important;
+            display: none !important;
+        }
+    }
+}

@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/css/Style.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="assets/js/main.js"></script>
+
+    <title>Login Page</title>
+</head>
+
+<body>
+    <input type="checkbox" id="checkBox" hidden>
+    <img src="assets/img/bg_attach_1.png" alt="" class="bgAttach1 " id="bgAttach1">
+    <img src="assets/img/bg_attach_2.png" alt="" class="bgAttach2">
+
+    <div class="loginContainer" id="loginContainer">
+        <div class="login">
+            <div class="left">
+                <img src="assets/img/signin.svg" alt="">
+                <p>حساب کاربری ندارید ؟</p>
+                <label for="checkBox" id="authChange">ثبت نام</label>
+            </div>
+            <div class="right">
+                <div class="container">
+                    <p> <span>ورود</span>&nbsp; به حساب کاربری</p>
+
+                    <form action="" class="loginForm">
+                        <div class="input_container">
+                            <input type="text" class="current_input" required autocomplete="email" name="email" />
+                            <div class="input_line"></div>
+                            <p class="input_label">ایمیل</p>
+                        </div>
+                        <p class="errorBox">s</p>
+                        <div class="input_container">
+                            <input type="password" class="current_input LoginpasswordInput" maxlength="50" required autocomplete="password" name="password" />
+                            <div class="input_line"></div>
+                            <p class="input_label">رمز عبور</p>
+                            <i class="fa fa-eye input_password_shower"></i>
+                        </div>
+                        <p class="errorBox">s</p>
+
+
+                        <button type="submit" class="formSubmit">ورود</button>
+                    </form>
+
+                    <div class="separatorSection">
+                        <div></div>
+                        <span>یا</span>
+                        <div></div>
+                    </div>
+
+                    <div class="loginOtherWays">
+                        <p class="loginOtherWaysTitle">ورود با حساب های </p>
+                        <section><i class="fab fa-google"></i><i class="fab fa-github"></i></section>
+                    </div>
+                    <p class="signupMobile">
+                        <span>حساب کاربری ندارید ؟</span>
+                        <label for="checkBox" id="authChange">ثبت نام</label></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="registerContainer" id="registerContainer">
+        <div class="register">
+            <div class="left">
+                <img src="assets/img/signup.svg" alt="">
+                <p>حساب کاربری دارید ؟</p>
+                <label for="checkBox">ورود</label>
+            </div>
+            <div class="right">
+                <div class="container">
+                    <p> <span>ساخت</span>&nbsp; حساب کاربری</p>
+
+                    <form action="" class="loginForm" id="loginForm">
+                        <div class="input_container">
+                            <input type="text" class="current_input" id="auth_usernameInput" required autocomplete="username" name="username" />
+                            <div class="input_line" id="usernameLine"></div>
+                            <p class="input_label">نام کاربری</p>
+                        </div>
+                        <p class="errorBox" id="usernameError">test</p>
+
+                        <div class="input_container">
+                            <input type="text" class="current_input" id="auth_emailInput" required autocomplete="email" name="email" />
+                            <div class="input_line" id="email_line"></div>
+                            <p class="input_label">ایمیل</p>
+                        </div>
+                        <p class="errorBox" id="emailError">test</p>
+
+                        <div class="input_container">
+                            <input type="password" class="current_input LoginpasswordInput" id="auth_passInput" maxlength="50" required autocomplete="password" name="password" />
+                            <div class="input_line" id="passLine"></div>
+                            <p class="input_label">رمز عبور</p>
+                            <i class="fa fa-eye input_password_shower"></i>
+                        </div>
+                        <p class="errorBox" id="passError">s</p>
+
+
+                        <div class="input_container">
+                            <input type="password" class="current_input LoginpasswordInput" id="auth_repassInput" maxlength="50" required autocomplete="password" name="password" />
+                            <div class="input_line" id="repassLine"></div>
+                            <p class="input_label">تکرار رمز عبور</p>
+                            <i class="fa fa-eye input_password_shower"></i>
+                        </div>
+                        <p class="errorBox" id="repassError">s</p>
+
+
+                        <button type="submit" class="formSubmit" id="signupBtn">ثبت نام</button>
+                    </form>
+
+                    <div class="separatorSection">
+                        <div></div>
+                        <span>یا</span>
+                        <div></div>
+                    </div>
+
+                    <div class="loginOtherWays">
+                        <p class="loginOtherWaysTitle">ساخت با حساب های </p>
+                        <section><i class="fab fa-google"></i><i class="fab fa-github"></i></section>
+                    </div>
+                    <p class="signupMobile">
+                        <span>حساب کاربری دارید ؟</span>
+                        <label for="checkBox">ورود</label></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="https://kit.fontawesome.com/f902a97980.js" crossorigin="anonymous"></script>
+
+</html>

@@ -1,0 +1,457 @@
+@font-face {
+  font-family: mainFont;
+  src: url(assets/IRANSansFaNum.ttf);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: mainFont;
+  background-color: #21C7B1;
+  overflow: hidden;
+}
+
+.bgAttach1 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 40%;
+  pointer-events: none;
+}
+
+.bgAttach2 {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 40%;
+  pointer-events: none;
+}
+
+.loginContainer,
+.registerContainer {
+  width: 100%;
+  height: 100vh;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 1s ease-in-out;
+  opacity: 1;
+}
+
+.loginContainer .login,
+.loginContainer .register,
+.registerContainer .login,
+.registerContainer .register {
+  width: 1000px;
+  background-color: #fff;
+  border-radius: 25px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.loginContainer .login .right,
+.loginContainer .register .right,
+.registerContainer .login .right,
+.registerContainer .register .right {
+  width: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.loginContainer .login .right .container,
+.loginContainer .register .right .container,
+.registerContainer .login .right .container,
+.registerContainer .register .right .container {
+  width: 70%;
+  margin: 2rem 0;
+  direction: rtl;
+  display: flex;
+  flex-direction: column;
+}
+
+.loginContainer .login .right .container p:first-child,
+.loginContainer .register .right .container p:first-child,
+.registerContainer .login .right .container p:first-child,
+.registerContainer .register .right .container p:first-child {
+  font-weight: 900;
+  margin-bottom: 1.5rem;
+  color: #333;
+  font-size: 18px;
+  opacity: .7;
+}
+
+.loginContainer .login .right .container p:first-child span,
+.loginContainer .register .right .container p:first-child span,
+.registerContainer .login .right .container p:first-child span,
+.registerContainer .register .right .container p:first-child span {
+  color: #21C7B1;
+  font-size: 35px;
+}
+
+.loginContainer .login .right .container .loginForm .errorBox,
+.loginContainer .register .right .container .loginForm .errorBox,
+.registerContainer .login .right .container .loginForm .errorBox,
+.registerContainer .register .right .container .loginForm .errorBox {
+  margin-bottom: 2rem;
+  visibility: hidden;
+  font-size: 12px;
+  color: #8b0000;
+  margin-top: .2rem;
+  transition: all .30s ease-in-out;
+}
+
+.loginContainer .login .right .container .loginForm .input_container,
+.loginContainer .register .right .container .loginForm .input_container,
+.registerContainer .login .right .container .loginForm .input_container,
+.registerContainer .register .right .container .loginForm .input_container {
+  margin: 0rem 0;
+  position: relative;
+  width: 100%;
+}
+
+.loginContainer .login .right .container .loginForm .input_password_container,
+.loginContainer .register .right .container .loginForm .input_password_container,
+.registerContainer .login .right .container .loginForm .input_password_container,
+.registerContainer .register .right .container .loginForm .input_password_container {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.loginContainer .login .right .container .loginForm .input_password_container .input_container,
+.loginContainer .register .right .container .loginForm .input_password_container .input_container,
+.registerContainer .login .right .container .loginForm .input_password_container .input_container,
+.registerContainer .register .right .container .loginForm .input_password_container .input_container {
+  width: 45%;
+}
+
+.loginContainer .login .right .container .loginForm .current_input,
+.loginContainer .register .right .container .loginForm .current_input,
+.registerContainer .login .right .container .loginForm .current_input,
+.registerContainer .register .right .container .loginForm .current_input {
+  padding: 0.5rem 0;
+  text-align: right;
+  width: 100%;
+  border: none;
+  border-bottom: 1.5px solid #d3d3d3;
+  outline: none;
+}
+
+.loginContainer .login .right .container .loginForm .current_input:focus ~ .input_label,
+.loginContainer .login .right .container .loginForm .current_input:valid ~ .input_label,
+.loginContainer .register .right .container .loginForm .current_input:focus ~ .input_label,
+.loginContainer .register .right .container .loginForm .current_input:valid ~ .input_label,
+.registerContainer .login .right .container .loginForm .current_input:focus ~ .input_label,
+.registerContainer .login .right .container .loginForm .current_input:valid ~ .input_label,
+.registerContainer .register .right .container .loginForm .current_input:focus ~ .input_label,
+.registerContainer .register .right .container .loginForm .current_input:valid ~ .input_label {
+  bottom: 39px;
+  right: 0;
+  opacity: 1;
+  font-size: 11px;
+}
+
+.loginContainer .login .right .container .loginForm .current_input:focus ~ .input_label i,
+.loginContainer .login .right .container .loginForm .current_input:valid ~ .input_label i,
+.loginContainer .register .right .container .loginForm .current_input:focus ~ .input_label i,
+.loginContainer .register .right .container .loginForm .current_input:valid ~ .input_label i,
+.registerContainer .login .right .container .loginForm .current_input:focus ~ .input_label i,
+.registerContainer .login .right .container .loginForm .current_input:valid ~ .input_label i,
+.registerContainer .register .right .container .loginForm .current_input:focus ~ .input_label i,
+.registerContainer .register .right .container .loginForm .current_input:valid ~ .input_label i {
+  font-size: 11px;
+}
+
+.loginContainer .login .right .container .loginForm .current_input:focus ~ .input_label ::before,
+.loginContainer .login .right .container .loginForm .current_input:valid ~ .input_label ::before,
+.loginContainer .register .right .container .loginForm .current_input:focus ~ .input_label ::before,
+.loginContainer .register .right .container .loginForm .current_input:valid ~ .input_label ::before,
+.registerContainer .login .right .container .loginForm .current_input:focus ~ .input_label ::before,
+.registerContainer .login .right .container .loginForm .current_input:valid ~ .input_label ::before,
+.registerContainer .register .right .container .loginForm .current_input:focus ~ .input_label ::before,
+.registerContainer .register .right .container .loginForm .current_input:valid ~ .input_label ::before {
+  display: none;
+  opacity: 0;
+  content: '';
+}
+
+.loginContainer .login .right .container .loginForm .current_input:focus ~ .input_line,
+.loginContainer .login .right .container .loginForm .current_input:valid ~ .input_line,
+.loginContainer .register .right .container .loginForm .current_input:focus ~ .input_line,
+.loginContainer .register .right .container .loginForm .current_input:valid ~ .input_line,
+.registerContainer .login .right .container .loginForm .current_input:focus ~ .input_line,
+.registerContainer .login .right .container .loginForm .current_input:valid ~ .input_line,
+.registerContainer .register .right .container .loginForm .current_input:focus ~ .input_line,
+.registerContainer .register .right .container .loginForm .current_input:valid ~ .input_line {
+  transform: scaleX(1);
+}
+
+.loginContainer .login .right .container .loginForm .input_label,
+.loginContainer .register .right .container .loginForm .input_label,
+.registerContainer .login .right .container .loginForm .input_label,
+.registerContainer .register .right .container .loginForm .input_label {
+  position: absolute;
+  bottom: 13px;
+  right: 10px;
+  color: grey;
+  font-size: 13px;
+  opacity: 0.8;
+  pointer-events: none;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.loginContainer .login .right .container .loginForm .input_label i,
+.loginContainer .register .right .container .loginForm .input_label i,
+.registerContainer .login .right .container .loginForm .input_label i,
+.registerContainer .register .right .container .loginForm .input_label i {
+  margin-left: .5rem;
+  font-size: 14px;
+  transition: all .30s ease;
+}
+
+.loginContainer .login .right .container .loginForm .input_password_shower,
+.loginContainer .register .right .container .loginForm .input_password_shower,
+.registerContainer .login .right .container .loginForm .input_password_shower,
+.registerContainer .register .right .container .loginForm .input_password_shower {
+  position: absolute;
+  bottom: -17px;
+  opacity: 0;
+  visibility: hidden;
+  cursor: pointer;
+  left: 10px;
+  color: grey;
+  font-size: 17px;
+  transition: all 0.3s cubic-bezier(1, 0, 0, 1);
+  transition: all .30s ease;
+}
+
+.loginContainer .login .right .container .loginForm .input_password_shower:hover,
+.loginContainer .register .right .container .loginForm .input_password_shower:hover,
+.registerContainer .login .right .container .loginForm .input_password_shower:hover,
+.registerContainer .register .right .container .loginForm .input_password_shower:hover {
+  color: #333;
+}
+
+.loginContainer .login .right .container .loginForm .input_line,
+.loginContainer .register .right .container .loginForm .input_line,
+.registerContainer .login .right .container .loginForm .input_line,
+.registerContainer .register .right .container .loginForm .input_line {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2.5px;
+  background-color: #333;
+  transform: scaleX(0);
+  transition: all 0.5s ease;
+}
+
+.loginContainer .login .right .container .loginForm .formSubmit,
+.loginContainer .register .right .container .loginForm .formSubmit,
+.registerContainer .login .right .container .loginForm .formSubmit,
+.registerContainer .register .right .container .loginForm .formSubmit {
+  width: 100%;
+  padding: .7rem 0;
+  border-radius: 10px;
+  background-color: #21C7B1;
+  border: none;
+  cursor: pointer;
+  color: #fff;
+}
+
+.loginContainer .login .right .container .separatorSection,
+.loginContainer .register .right .container .separatorSection,
+.registerContainer .login .right .container .separatorSection,
+.registerContainer .register .right .container .separatorSection {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 1rem 0;
+  margin-top: 2.5rem;
+}
+
+.loginContainer .login .right .container .separatorSection div,
+.loginContainer .register .right .container .separatorSection div,
+.registerContainer .login .right .container .separatorSection div,
+.registerContainer .register .right .container .separatorSection div {
+  width: 100%;
+  height: 2px;
+  background-color: #D6EAE7;
+  opacity: .7;
+}
+
+.loginContainer .login .right .container .separatorSection span,
+.loginContainer .register .right .container .separatorSection span,
+.registerContainer .login .right .container .separatorSection span,
+.registerContainer .register .right .container .separatorSection span {
+  margin: 0 1rem;
+  opacity: .6;
+}
+
+.loginContainer .login .right .container .loginOtherWays,
+.loginContainer .register .right .container .loginOtherWays,
+.registerContainer .login .right .container .loginOtherWays,
+.registerContainer .register .right .container .loginOtherWays {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
+  justify-content: space-between;
+}
+
+.loginContainer .login .right .container .loginOtherWays .loginOtherWaysTitle,
+.loginContainer .register .right .container .loginOtherWays .loginOtherWaysTitle,
+.registerContainer .login .right .container .loginOtherWays .loginOtherWaysTitle,
+.registerContainer .register .right .container .loginOtherWays .loginOtherWaysTitle {
+  font-size: 14px;
+  margin-bottom: 0;
+}
+
+.loginContainer .login .right .container .loginOtherWays section i,
+.loginContainer .register .right .container .loginOtherWays section i,
+.registerContainer .login .right .container .loginOtherWays section i,
+.registerContainer .register .right .container .loginOtherWays section i {
+  font-size: 35px;
+  color: #000;
+  opacity: .7;
+  border-radius: 50px;
+  margin-right: 1rem;
+  cursor: pointer;
+  transition: all .30s ease-in-out;
+}
+
+.loginContainer .login .right .container .loginOtherWays section i:hover,
+.loginContainer .register .right .container .loginOtherWays section i:hover,
+.registerContainer .login .right .container .loginOtherWays section i:hover,
+.registerContainer .register .right .container .loginOtherWays section i:hover {
+  opacity: 1;
+}
+
+.loginContainer .login .left,
+.loginContainer .register .left,
+.registerContainer .login .left,
+.registerContainer .register .left {
+  width: 50%;
+  background-color: #D6EAE7;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  border-radius: 25px 0 0 25px;
+  padding: 2rem 0;
+}
+
+.loginContainer .login .left img,
+.loginContainer .register .left img,
+.registerContainer .login .left img,
+.registerContainer .register .left img {
+  width: 80%;
+}
+
+.loginContainer .login .left p,
+.loginContainer .register .left p,
+.registerContainer .login .left p,
+.registerContainer .register .left p {
+  margin-top: 2rem;
+  opacity: .7;
+}
+
+.loginContainer .login .left label,
+.loginContainer .register .left label,
+.registerContainer .login .left label,
+.registerContainer .register .left label {
+  font-size: 23px;
+  margin: .5rem 0;
+  font-weight: 700;
+  cursor: pointer;
+  color: #21C7B1;
+}
+
+#registerContainer {
+  top: -100%;
+  opacity: 0;
+}
+
+label {
+  color: #21C7B1;
+}
+
+.signupMobile {
+  opacity: .7;
+  display: none;
+}
+
+#checkBox:checked ~ #loginContainer {
+  top: -100%;
+  opacity: 0;
+}
+
+#checkBox:checked ~ #registerContainer {
+  top: 0%;
+  opacity: 1;
+}
+
+#checkBox:checked ~ .bgAttach1 {
+  animation: bgAttach1 1s ease-in-out;
+}
+
+#checkBox:checked ~ .bgAttach2 {
+  animation: bgAttach2 1s ease-in-out;
+}
+
+@keyframes bgAttach1 {
+  0% {
+    top: 0%;
+    left: 0;
+  }
+  50% {
+    top: -10%;
+    left: -10%;
+  }
+  100% {
+    top: 0%;
+    left: 0;
+  }
+}
+
+@keyframes bgAttach2 {
+  0% {
+    bottom: 0%;
+    right: 0;
+  }
+  50% {
+    bottom: -10%;
+    right: -10%;
+  }
+  100% {
+    bottom: 0%;
+    right: 0;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .login .right,
+  .register .right {
+    width: 100% !important;
+  }
+  .login .right .signupMobile,
+  .register .right .signupMobile {
+    display: flex;
+  }
+  .login .left,
+  .register .left {
+    width: 0 !important;
+    display: none !important;
+  }
+}
+/*# sourceMappingURL=Style.css.map */
